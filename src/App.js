@@ -49,18 +49,23 @@ function App() {
        <h1>Employee Data Table</h1>
       {items.length?
        <table>
+         <thead>
            <tr>
                <th >ID</th>
                <th>Name</th>
                <th>Email</th>
                <th>Role</th>
            </tr>
+           </thead>
+           <tbody>
            {
             items.map((ele)=>{
               return <EachRow ele={ele}/>
             })
 
            }
+           </tbody>
+
        </table>:""}
        <div className='btn'>
           <button onClick={()=>dir("prev")}>Previous</button><span style={{backgroundColor:"#357835c7",padding:".5rem",color:"#FFFFFF"}}>{page}</span><button onClick={()=>dir("next")}>Next</button>
